@@ -1,6 +1,6 @@
 package ui.steps;
 
-import spotify.ui.pages.LoginPage;
+import ui.pages.LoginPage;
 
 public class LoginUserSteps {
 
@@ -9,6 +9,7 @@ public class LoginUserSteps {
             .clickLogin()
             .inputUsername(name)
             .inputPassword(password)
-            .enterLoginUser();
+            .enterLoginUser()
+            .returnMainPage();
   }
 }

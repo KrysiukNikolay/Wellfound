@@ -29,9 +29,10 @@ public class ReviewsPage extends BasePage {
         return this;
     }
 
-    public void inputComments(String comments) {
+    public ReviewsPage inputComments(String comments) {
         WebElement formSearch = driver.findElement(INPUT_COMMENTS);
         formSearch.sendKeys(comments);
+        return this;
     }
 
     public ReviewsPage enterSumbit() {

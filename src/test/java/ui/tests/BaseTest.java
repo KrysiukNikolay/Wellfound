@@ -2,8 +2,8 @@ package ui.tests;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import spotify.ui.driver.DriverSetup;
-import spotify.ui.pages.HomePage;
+import ui.driver.DriverSetup;
+import ui.pages.HomePage;
 
 public class BaseTest extends HomePage {
 

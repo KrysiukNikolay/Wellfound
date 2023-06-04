@@ -10,6 +10,7 @@ public class LoginPage extends BasePage {
   private final By INPUT_PASSWORD = By.xpath("//input[@id='password']");
   private final By BUTTON_ENTER_LOGIN = By.xpath("//button[@class='btn grey-dark blank touch-element-cl ng-hide']");
   private final By MAIN_PAGE = By.xpath("//span[@class='w-icon-wallet']");
+  private final By USER_AUTORIZED_NAME = By.xpath("//a[@class='user']");
 
 
 
@@ -37,9 +38,14 @@ public class LoginPage extends BasePage {
   }
 
   public LoginPage returnMainPage() {
-    WebElement buttonLogInUser = driver.findElement(MAIN_PAGE);
-    buttonLogInUser.click();
+    WebElement mainPage = driver.findElement(MAIN_PAGE);
+    mainPage.click();
     return this;
+  }
+
+  public boolean isDisplayedAvatar() {
+    WebElement userAvatar = driver.findElement(USER_AUTORIZED_NAME);
+    return userAvatar.isDisplayed();
   }
 
 }
