@@ -10,7 +10,7 @@ import ui.steps.LoginUserSteps;
 public class LoginTest extends BaseTest {
 
   @Test
-  @DisplayName("Авторизация с корректными данными")
+  @DisplayName("Autorization")
   public void testLoginCorrectDataUser() {
     LoginPage loginPage = new LoginPage();
     LoginUserSteps.stepsUserLogIn(UserData.USER_EMAIL, UserData.USER_PASSWORD);

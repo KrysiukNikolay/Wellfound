@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class ReviewsTest extends BaseTest {
 
     @Test
-    @DisplayName("Отзыв")
+    @DisplayName("Reviews")
     public void testReviews(){
 
     }
