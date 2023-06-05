@@ -8,7 +8,7 @@ public class LoginPage extends BasePage {
   private final By BUTTON_LOGIN_PAGE = By.xpath("//a[@class='login']");
   private final By INPUT_USERNAME = By.xpath("//input[@id='email']");
   private final By INPUT_PASSWORD = By.xpath("//input[@id='password']");
-  private final By BUTTON_ENTER_LOGIN = By.xpath("//button[@class='btn grey-dark blank touch-element-cl ng-hide']");
+  private final By BUTTON_ENTER_LOGIN = By.xpath("//div[@id='join-login']/form[@name='$form']/div[@class='btns']/button[2]");
   private final By MAIN_PAGE = By.xpath("//span[@class='w-icon-wallet']");
   private final By USER_AUTORIZED_NAME = By.xpath("//a[@class='user']");
 
