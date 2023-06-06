@@ -2,6 +2,7 @@ package ui.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends BasePage {
 
@@ -10,9 +11,7 @@ public class LoginPage extends BasePage {
   private final By INPUT_PASSWORD = By.xpath("//input[@id='password']");
   private final By BUTTON_ENTER_LOGIN = By.xpath("//div[@id='join-login']/form[@name='$form']/div[@class='btns']/button[2]");
   private final By MAIN_PAGE = By.xpath("//span[@class='w-icon-wallet']");
-  private final By USER_AUTORIZED_NAME = By.xpath("//a[@class='user']");
-
-
+  private final By USER_AUTHORIZED_NAME = By.xpath("//a[@class='user']");
 
   public LoginPage clickLogin() {
     WebElement buttonLogIn = driver.findElement(BUTTON_LOGIN_PAGE);
@@ -44,7 +43,7 @@ public class LoginPage extends BasePage {
   }
 
   public boolean isDisplayedAvatar() {
-    WebElement userAvatar = driver.findElement(USER_AUTORIZED_NAME);
+    WebElement userAvatar = driver.findElement(USER_AUTHORIZED_NAME);
     return userAvatar.isDisplayed();
   }
 
