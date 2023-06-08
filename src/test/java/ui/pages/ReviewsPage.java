@@ -2,18 +2,26 @@ package ui.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import ui.data.UserData;
+
+import java.util.List;
 
 public class ReviewsPage extends BasePage {
 
-    public final By FOUR_STAR_RATING = By.cssSelector(".rvs-svg > div > svg:nth-of-type(4)");
+    public final String profilePage = "https://wallethub.com/profile/13732055i";
+    public final int starRatingNumber = 4;
+    public final By FOUR_STAR_RATING = By.cssSelector(".ng-enter-element .rvs-star-svg:nth-of-type(" + starRatingNumber + ")");
     public final By SELECT_FORM = By.xpath("//div[@class='dropdown second']");
-    public final By SELECT_LIFE_INSURANCE = By.xpath("//li[@id='opt-647c3cedce6b7-1']");
-    public final By INPUT_COMMENTS = By.xpath("//div[@class='android textarea-user']");
+    public final By SELECT_LIFE_INSURANCE = By.cssSelector(".wrev-drp  ul[role='listbox'] > li:nth-of-type(3)");
+    public final By INPUT_COMMENTS = By.cssSelector(".wrev-user-input");
     public final By BUTTON_SUBMIT = By.xpath("//div[@class='sbn-action semi-bold-font btn fixed-w-c tall']");
+    public final By AUTHORIZED_NAME = By.xpath("//span[text()='@" + UserData.username + "']");
+    public final By PUBLISHED_COMMENTS = By.cssSelector("[data-pos='0']");
+
 
     public ReviewsPage enterStarRating() {
-        WebElement buttonSearch = driver.findElement(FOUR_STAR_RATING);
-        buttonSearch.click();
+        WebElement fourStar = driver.findElement(FOUR_STAR_RATING);
+        fourStar.click();
         return this;
     }
 
@@ -40,4 +48,18 @@ public class ReviewsPage extends BasePage {
         buttonSearch.click();
         return this;
     }
+
+    public ReviewsPage navigateToProfilePage() {
+        driver.get(profilePage);
+        return this;
+    }
+    public boolean isDisplayedAvatar() {
+        WebElement userAvatar = driver.findElement(AUTHORIZED_NAME);
+        return userAvatar.isDisplayed();
+    }
+    public String publishedComments(){
+        WebElement text = driver.findElement(PUBLISHED_COMMENTS);
+        return text.getText();
+    }
+
 }

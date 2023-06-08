@@ -11,7 +11,7 @@ public class LoginTest extends BaseTest {
 
   @Test
   @DisplayName("Authorization")
-  public void testLoginCorrectDataUser() {
+  public void testLoginCorrectDataUser() throws InterruptedException {
     LoginPage loginPage = new LoginPage();
     LoginUserSteps.stepsUserLogIn(UserData.USER_EMAIL, UserData.USER_PASSWORD);
     Assertions.assertTrue(loginPage.isDisplayedAvatar());
