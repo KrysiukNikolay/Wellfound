@@ -19,7 +19,7 @@ public class ReviewsTest extends BaseTest {
         LoginUserSteps.stepsUserLogIn(UserData.USER_EMAIL, UserData.USER_PASSWORD);
         ReviewsSteps.stepsReviews(UserData.COMMENTS);
         Assertions.assertEquals(UserData.COMMENTS, reviewsPage.publishedComments());
-        Assertions.assertTrue(reviewsPage.isDisplayedAvatar());
+        Assertions.assertEquals(reviewsPage.starRatingNumber,reviewsPage.assertStar());
 
 
     }

@@ -9,7 +9,7 @@ import java.util.List;
 public class ReviewsPage extends BasePage {
 
     public final String profilePage = "https://wallethub.com/profile/13732055i";
-    public final int starRatingNumber = 4;
+    public final String starRatingNumber = "4";
     public final By FOUR_STAR_RATING = By.cssSelector(".ng-enter-element .rvs-star-svg:nth-of-type(" + starRatingNumber + ")");
     public final By SELECT_FORM = By.xpath("//div[@class='dropdown second']");
     public final By SELECT_LIFE_INSURANCE = By.cssSelector(".wrev-drp  ul[role='listbox'] > li:nth-of-type(3)");
@@ -17,6 +17,7 @@ public class ReviewsPage extends BasePage {
     public final By BUTTON_SUBMIT = By.xpath("//div[@class='sbn-action semi-bold-font btn fixed-w-c tall']");
     public final By AUTHORIZED_NAME = By.xpath("//span[text()='@" + UserData.username + "']");
     public final By PUBLISHED_COMMENTS = By.cssSelector("[data-pos='0']");
+    public final By ASSERT_STAR = By.xpath("//span[text()='@krysiuk_nikolay']/../../../div[@itemprop='reviewRating']/meta[@itemprop='ratingValue']");
 
 
     public ReviewsPage enterStarRating() {
@@ -60,6 +61,10 @@ public class ReviewsPage extends BasePage {
     public String publishedComments(){
         WebElement text = driver.findElement(PUBLISHED_COMMENTS);
         return text.getText();
+    }
+    public String assertStar(){
+        WebElement stars = driver.findElement(ASSERT_STAR);
+        return stars.getAttribute("content");
     }
 
 }
