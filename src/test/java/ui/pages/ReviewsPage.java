@@ -2,15 +2,17 @@ package ui.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import ui.config.ConfigReader;
 import ui.data.UserData;
 
 import java.util.List;
 
 public class ReviewsPage extends BasePage {
+    static ConfigReader configReader = new ConfigReader();
+    static String userStar = configReader.getStar();
 
     public final String profilePage = "https://wallethub.com/profile/13732055i";
-    public final String starRatingNumber = "4";
-    public final By FOUR_STAR_RATING = By.cssSelector(".ng-enter-element .rvs-star-svg:nth-of-type(" + starRatingNumber + ")");
+    public final By FOUR_STAR_RATING = By.cssSelector(".ng-enter-element .rvs-star-svg:nth-of-type(" + userStar + ")");
     public final By SELECT_FORM = By.xpath("//div[@class='dropdown second']");
     public final By SELECT_LIFE_INSURANCE = By.cssSelector(".wrev-drp  ul[role='listbox'] > li:nth-of-type(3)");
     public final By INPUT_COMMENTS = By.cssSelector(".wrev-user-input");
